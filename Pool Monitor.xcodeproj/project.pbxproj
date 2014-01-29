@@ -26,10 +26,13 @@
 		C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */; };
 		C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DF0418917A7F00A5C4A9 /* Pool.m */; };
 		C800DF0818919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DF0718919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m */; };
+		C825D95E18992F3A00BA0372 /* PMPoolInfoTVCBasis.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */; };
+		C825D9611899300A00BA0372 /* PMDataDownloaderFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D9601899300A00BA0372 /* PMDataDownloaderFormatter.m */; };
 		C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */; };
 		C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */; };
 		C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */; };
 		C8FBBFBA18945E97007D7894 /* PMPoolInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */; };
+		C8FBBFBF189541E4007D7894 /* PMPoolInfoOtherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FBBFBE189541E4007D7894 /* PMPoolInfoOtherTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,10 @@
 		C800DF0418917A7F00A5C4A9 /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pool.m; path = "Pool Monitor/Pool.m"; sourceTree = "<group>"; };
 		C800DF0618919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoMultipoolTVC.h; sourceTree = "<group>"; };
 		C800DF0718919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoMultipoolTVC.m; sourceTree = "<group>"; };
+		C825D95C18992F3A00BA0372 /* PMPoolInfoTVCBasis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoTVCBasis.h; sourceTree = "<group>"; };
+		C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoTVCBasis.m; sourceTree = "<group>"; };
+		C825D95F1899300A00BA0372 /* PMDataDownloaderFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderFormatter.h; sourceTree = "<group>"; };
+		C825D9601899300A00BA0372 /* PMDataDownloaderFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderFormatter.m; sourceTree = "<group>"; };
 		C831DF9C1891B98A002EBB2D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C831DF9E1891B98A002EBB2D /* MBProgressHUDOnTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDOnTop.h; sourceTree = "<group>"; };
@@ -76,6 +83,8 @@
 		C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		C8FBBFB818945E97007D7894 /* PMPoolInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoTVC.h; sourceTree = "<group>"; };
 		C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoTVC.m; sourceTree = "<group>"; };
+		C8FBBFBD189541E4007D7894 /* PMPoolInfoOtherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMPoolInfoOtherTVC.h; path = ../PMPoolInfoOtherTVC.h; sourceTree = "<group>"; };
+		C8FBBFBE189541E4007D7894 /* PMPoolInfoOtherTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMPoolInfoOtherTVC.m; path = ../PMPoolInfoOtherTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +153,12 @@
 				C800DEF518916A3A00A5C4A9 /* Storyboard.storyboard */,
 				C800DEF718916A9100A5C4A9 /* PMPoolTVC.h */,
 				C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */,
+				C825D95C18992F3A00BA0372 /* PMPoolInfoTVCBasis.h */,
+				C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */,
+				C825D95F1899300A00BA0372 /* PMDataDownloaderFormatter.h */,
+				C825D9601899300A00BA0372 /* PMDataDownloaderFormatter.m */,
+				C8FBBFBD189541E4007D7894 /* PMPoolInfoOtherTVC.h */,
+				C8FBBFBE189541E4007D7894 /* PMPoolInfoOtherTVC.m */,
 				C8FBBFB818945E97007D7894 /* PMPoolInfoTVC.h */,
 				C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */,
 				C800DF0618919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.h */,
@@ -301,10 +316,13 @@
 				C800DED618916A1D00A5C4A9 /* Pool_Monitor.xcdatamodeld in Sources */,
 				C800DECF18916A1D00A5C4A9 /* main.m in Sources */,
 				C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */,
+				C825D95E18992F3A00BA0372 /* PMPoolInfoTVCBasis.m in Sources */,
 				C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */,
 				C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */,
+				C825D9611899300A00BA0372 /* PMDataDownloaderFormatter.m in Sources */,
 				C800DED318916A1D00A5C4A9 /* PMAppDelegate.m in Sources */,
 				C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */,
+				C8FBBFBF189541E4007D7894 /* PMPoolInfoOtherTVC.m in Sources */,
 				C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

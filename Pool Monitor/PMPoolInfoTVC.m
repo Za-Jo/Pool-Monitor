@@ -17,7 +17,6 @@
 @property (nonatomic, strong) NSMutableArray *arraySectionWithArrayInfo;
 @property (nonatomic, strong) NSMutableArray *arraySectionName;
 @property (nonatomic, strong) NSMutableArray *arraySectionWithArrayLabel;
-
 @end
 
 @implementation PMPoolInfoTVC
@@ -82,13 +81,11 @@
                                                                                                           NSData *data,
                                                                                                           NSError *error)
      {
-         
          if ([data length] >0 && error == nil)
          {
              DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
              [self formatData:data];
              // DO YOUR WORK HERE
-             
          }
          else if ([data length] == 0 && error == nil)
          {
@@ -106,6 +103,7 @@
              [[[UIAlertView alloc] initWithTitle:@"Network error" message:@"Unable to get the informations due to a network error or due to a wrong api address" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
              [self.navigationController popViewControllerAnimated:YES];
          }
+
          
      }];
 }
@@ -150,6 +148,10 @@
             [infoSec1 addObject:[dic valueForKey:@"balance"]];
             [labelSec1 addObject:@"Balance"];
         }
+        else if([[dic allKeys] containsObject:@"confirmed_rewards"]){
+            [infoSec1 addObject:[dic valueForKey:@"confirmed_rewards"]];
+            [labelSec1 addObject:@"Balance"];
+        }
         
         [_arraySectionWithArrayInfo addObject:infoSec1];
         [_arraySectionWithArrayLabel addObject:labelSec1];
@@ -176,7 +178,7 @@
             }
             
             if([[worker allKeys] containsObject:@"alive"]){
-                if([worker valueForKey:@"alive"] == 0)
+                if([[worker valueForKey:@"alive"] intValue] == 0)
                     [workerInfoSec addObject:@"NO"];
                 else
                     [workerInfoSec addObject:@"YES"];
@@ -201,37 +203,8 @@
     
 }
 
-//#pragma mark NSURLConnection Delegate Methods
-//
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-//    // A response has been received, this is where we initialize the instance var you created
-//    // so that we can append data to it in the didReceiveData method
-//    // Furthermore, this method is called each time there is a redirect so reinitializing it
-//    // also serves to clear it
-//    _responseData = [[NSMutableData alloc] init];
-//}
-//
-//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-//    // Append the new data to the instance variable you declared
-//    [_responseData appendData:data];
-//}
-//
-//- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
-//                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
-//    // Return nil to indicate not necessary to store a cached response for this connection
-//    return nil;
-//}
-//
-//- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-//    // The request is complete and data has been received
-//    // You can parse the stuff in your instance variable now
-//
-//}
-//
-//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-//    // The request has failed for some reason!
-//    // Check the error var
-//}
+
+
 
 
 

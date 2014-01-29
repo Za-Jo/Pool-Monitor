@@ -11,6 +11,7 @@
 #import "Pool.h"
 #import "PMPoolInfoMultipoolTVC.h"
 #import "PMPoolInfoTVC.h"
+#import "PMPoolInfoOtherTVC.h"
 
 @interface PMPoolTVC ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultController;
@@ -42,6 +43,8 @@
     [[self fetchedResultController] performFetch:nil];
     [self.tableView setAllowsSelectionDuringEditing:YES];
     [self.tableView setAllowsSelection:YES];
+    
+    self.navigationController.toolbarHidden = NO;
 
 
 }
@@ -55,11 +58,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 //===================================================================================================
 //===================================================================================================
 - (IBAction)editPoolsList:(id)sender {
     [self.tableView setEditing:![self.tableView isEditing] animated:YES];
 }
+
 
 //===================================================================================================
 //===================================================================================================
@@ -286,9 +291,14 @@
         {
             [self performSegueWithIdentifier:@"segue show pool info multipool" sender:selectedPool];
         }
+        
+        else if (([selectedPool.apiAddress rangeOfString:@"guardian"].location != NSNotFound) || ([selectedPool.apiAddress rangeOfString:@"wemineltc"].location != NSNotFound))
+        {
+            [self performSegueWithIdentifier:@"segue show pool info" sender:selectedPool];
+        }
         else
         {
-        [self performSegueWithIdentifier:@"segue show pool info" sender:selectedPool];
+            [self performSegueWithIdentifier:@"segue show pool info other" sender:selectedPool];
         }
 
         
@@ -309,6 +319,11 @@
     else if([segue.identifier isEqualToString:@"segue show pool info multipool"])
     {
         PMPoolInfoMultipoolTVC *dest = segue.destinationViewController;
+        dest.pool = sender;
+    }
+    else if([segue.identifier isEqualToString:@"segue show pool info other"])
+    {
+        PMPoolInfoOtherTVC *dest = segue.destinationViewController;
         dest.pool = sender;
     }
 }
