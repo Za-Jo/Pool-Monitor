@@ -9,9 +9,7 @@
 #import "PMPoolTVC.h"
 #import "PMAppDelegate.h"
 #import "Pool.h"
-#import "PMPoolInfoMultipoolTVC.h"
 #import "PMPoolInfoTVC.h"
-#import "PMPoolInfoOtherTVC.h"
 
 @interface PMPoolTVC ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultController;
