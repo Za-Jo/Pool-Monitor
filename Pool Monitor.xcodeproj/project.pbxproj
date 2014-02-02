@@ -33,6 +33,7 @@
 		C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */; };
 		C8E343CF189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */; };
 		C8E343D2189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */; };
+		C8E343D5189E59FD00FA01E3 /* PMHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343D4189E59FD00FA01E3 /* PMHelpVC.m */; };
 		C8FBBFBA18945E97007D7894 /* PMPoolInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeLTCRabbit.m; sourceTree = "<group>"; };
 		C8E343D0189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeGuardian.h; sourceTree = "<group>"; };
 		C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeGuardian.m; sourceTree = "<group>"; };
+		C8E343D3189E59FD00FA01E3 /* PMHelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMHelpVC.h; sourceTree = "<group>"; };
+		C8E343D4189E59FD00FA01E3 /* PMHelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMHelpVC.m; sourceTree = "<group>"; };
 		C8FBBFB818945E97007D7894 /* PMPoolInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoTVC.h; sourceTree = "<group>"; };
 		C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				C800DEF518916A3A00A5C4A9 /* Storyboard.storyboard */,
+				C8E343D3189E59FD00FA01E3 /* PMHelpVC.h */,
+				C8E343D4189E59FD00FA01E3 /* PMHelpVC.m */,
 				C800DEF718916A9100A5C4A9 /* PMPoolTVC.h */,
 				C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */,
 				C8C52707189C3FF50050B732 /* PMInfoFormattedForTV.h */,
@@ -339,6 +344,7 @@
 				C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */,
 				C800DED318916A1D00A5C4A9 /* PMAppDelegate.m in Sources */,
 				C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */,
+				C8E343D5189E59FD00FA01E3 /* PMHelpVC.m in Sources */,
 				C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
