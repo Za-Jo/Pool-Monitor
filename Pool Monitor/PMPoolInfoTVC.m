@@ -13,7 +13,6 @@
 @interface PMPoolInfoTVC ()
 - (IBAction)reload:(id)sender;
 -(void)loadData;
--(void)formatData:(NSData *)data;
 @property (nonatomic, strong) MBProgressHUDOnTop *progressHUD;
 @property (nonatomic, strong) PMInfoFormattedForTV *infoToShow;
 

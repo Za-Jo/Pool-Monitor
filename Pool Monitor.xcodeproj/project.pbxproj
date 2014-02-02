@@ -28,6 +28,7 @@
 		C825D9611899300A00BA0372 /* PMDataDownloaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */; };
 		C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */; };
 		C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */; };
+		C8993199189EAD8200D7BA79 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */; };
 		C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */; };
 		C8CD98AD189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */; };
 		C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */; };
@@ -44,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C800DEBC18916A1D00A5C4A9;
 			remoteInfo = "Pool Monitor";
+		};
+		C8993197189EAC9E00D7BA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,6 +85,7 @@
 		C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C831DF9E1891B98A002EBB2D /* MBProgressHUDOnTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDOnTop.h; sourceTree = "<group>"; };
 		C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUDOnTop.m; sourceTree = "<group>"; };
+		C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../External Library/MBProgressHUD-master/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
 		C8C52707189C3FF50050B732 /* PMInfoFormattedForTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMInfoFormattedForTV.h; sourceTree = "<group>"; };
 		C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMInfoFormattedForTV.m; sourceTree = "<group>"; };
 		C8CD98AB189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeMultipool.h; sourceTree = "<group>"; };
@@ -99,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8993199189EAD8200D7BA79 /* libMBProgressHUD.a in Frameworks */,
 				C800DEC318916A1D00A5C4A9 /* CoreGraphics.framework in Frameworks */,
 				C800DEC718916A1D00A5C4A9 /* CoreData.framework in Frameworks */,
 				C800DEC518916A1D00A5C4A9 /* UIKit.framework in Frameworks */,
@@ -123,6 +133,7 @@
 		C800DEB418916A1D00A5C4A9 = {
 			isa = PBXGroup;
 			children = (
+				C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */,
 				C831DFA21891B98F002EBB2D /* MBProgressHUD */,
 				C800DF0318917A7F00A5C4A9 /* Pool.h */,
 				C800DF0418917A7F00A5C4A9 /* Pool.m */,
@@ -218,6 +229,14 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		C8993194189EAC9E00D7BA79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C8C5270A189C46240050B732 /* data downloaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +316,12 @@
 			mainGroup = C800DEB418916A1D00A5C4A9;
 			productRefGroup = C800DEBE18916A1D00A5C4A9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C8993194189EAC9E00D7BA79 /* Products */;
+					ProjectRef = C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C800DEBC18916A1D00A5C4A9 /* Pool Monitor */,
@@ -304,6 +329,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = C8993197189EAC9E00D7BA79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C800DEBB18916A1D00A5C4A9 /* Resources */ = {
@@ -420,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -453,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
