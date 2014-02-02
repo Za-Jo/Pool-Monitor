@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Pool.h"
+#import "PMInfoFormattedForTV.h"
+#import "PMDataDownloaderProtocol.h"
 
-@interface PMPoolInfoTVC : UITableViewController <NSURLConnectionDelegate>
+
+@interface PMPoolInfoTVC : UITableViewController <NSURLConnectionDelegate, PMDataDownloaderDelegate>
 @property (nonatomic, strong) Pool *pool;
 @end

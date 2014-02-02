@@ -10,7 +10,7 @@
 #import "PMDataDownloaderProtocol.h"
 #import "PMInfoFormattedForTV.h"
 
-@interface PMDataDownloaderTypeLTCRabbit : NSObject
+@interface PMDataDownloaderTypeLTCRabbit : NSObject <PMDataDownloaderProtocol>
 
 @property (nonatomic, strong) id<PMDataDownloaderDelegate> delegate;
 @property (nonatomic, strong) PMInfoFormattedForTV *infoForTV;

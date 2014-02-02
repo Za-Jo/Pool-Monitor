@@ -42,6 +42,9 @@
 }
 
 
+//============================================================================
+//============================================================================
+
 -(void)setInfo:(NSString *)info AtIndexPath:(NSIndexPath *) path
 {
     NSMutableArray *infosInSection = [_labels objectAtIndex:path.section];
@@ -53,11 +56,47 @@
 }
 
 
--(void)setSectionName:(NSString *)name AtIndex:(NSInteger) index
+//============================================================================
+//============================================================================
+
+-(void)addLabel:(NSString *)label inSection:(NSUInteger) section
 {
-    [_sectionNames insertObject:name atIndex:index];
+    NSMutableArray *labelsInSection = [_labels objectAtIndex:section];
+    if(labelsInSection == nil){
+        labelsInSection = [NSMutableArray array];
+        [_labels insertObject:labelsInSection atIndex:section];
+    }
+    [labelsInSection addObject:label];
 }
 
+
+//============================================================================
+//============================================================================
+
+-(void)addInfo:(NSString *)info inSection:(NSUInteger) section
+{
+    NSMutableArray *infosInSection = [_infos objectAtIndex:section];
+    if(infosInSection == nil){
+        infosInSection = [NSMutableArray array];
+        [_infos insertObject:infosInSection atIndex:section];
+    }
+    [infosInSection addObject:info];
+}
+
+
+//============================================================================
+//============================================================================
+
+-(void)addSectionWithName:(NSString *)name
+{
+    [_sectionNames addObject:name];
+    [_infos addObject:[NSMutableArray array]];
+    [_labels addObject:[NSMutableArray array]];
+}
+
+
+//============================================================================
+//============================================================================
 
 -(NSString *)labelAtIndexPath:(NSIndexPath *) path
 {
@@ -71,9 +110,23 @@
 
 }
 
--(NSString *)sectionNameAtIndex:(NSInteger) index
+-(NSString *)sectionNameAtIndex:(NSUInteger) index
 {
     return [_sectionNames objectAtIndex:index];
 }
+
+
+-(NSUInteger)numberSection
+{
+    return [_sectionNames count];
+}
+
+
+-(NSUInteger)numberRowInSection:(NSUInteger)section
+{
+    NSMutableArray *array = [_infos objectAtIndex:section];
+    return [array count];
+}
+
 
 @end

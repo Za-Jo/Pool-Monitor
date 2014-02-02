@@ -26,12 +26,14 @@
 		C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */; };
 		C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DF0418917A7F00A5C4A9 /* Pool.m */; };
 		C800DF0818919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DF0718919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m */; };
-		C825D95E18992F3A00BA0372 /* PMPoolInfoTVCBasis.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */; };
-		C825D9611899300A00BA0372 /* PMDataDownloaderFormatterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D9601899300A00BA0372 /* PMDataDownloaderFormatterManager.m */; };
+		C825D9611899300A00BA0372 /* PMDataDownloaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */; };
 		C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */; };
 		C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */; };
-		C8CD98AD189C3AC80088D6D6 /* PMDDFType1.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CD98AC189C3AC80088D6D6 /* PMDDFType1.m */; };
+		C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */; };
+		C8CD98AD189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */; };
 		C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */; };
+		C8E343CF189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */; };
+		C8E343D2189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */; };
 		C8FBBFBA18945E97007D7894 /* PMPoolInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */; };
 		C8FBBFBF189541E4007D7894 /* PMPoolInfoOtherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FBBFBE189541E4007D7894 /* PMPoolInfoOtherTVC.m */; };
 /* End PBXBuildFile section */
@@ -72,19 +74,23 @@
 		C800DF0418917A7F00A5C4A9 /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pool.m; path = "Pool Monitor/Pool.m"; sourceTree = "<group>"; };
 		C800DF0618919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoMultipoolTVC.h; sourceTree = "<group>"; };
 		C800DF0718919E2A00A5C4A9 /* PMPoolInfoMultipoolTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoMultipoolTVC.m; sourceTree = "<group>"; };
-		C825D95C18992F3A00BA0372 /* PMPoolInfoTVCBasis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoTVCBasis.h; sourceTree = "<group>"; };
-		C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoTVCBasis.m; sourceTree = "<group>"; };
-		C825D95F1899300A00BA0372 /* PMDataDownloaderFormatterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderFormatterManager.h; sourceTree = "<group>"; };
-		C825D9601899300A00BA0372 /* PMDataDownloaderFormatterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderFormatterManager.m; sourceTree = "<group>"; };
+		C825D95F1899300A00BA0372 /* PMDataDownloaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderManager.h; sourceTree = "<group>"; };
+		C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderManager.m; sourceTree = "<group>"; };
 		C831DF9C1891B98A002EBB2D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C831DF9E1891B98A002EBB2D /* MBProgressHUDOnTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDOnTop.h; sourceTree = "<group>"; };
 		C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUDOnTop.m; sourceTree = "<group>"; };
-		C8CD98AB189C3AC80088D6D6 /* PMDDFType1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDDFType1.h; sourceTree = "<group>"; };
-		C8CD98AC189C3AC80088D6D6 /* PMDDFType1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDDFType1.m; sourceTree = "<group>"; };
+		C8C52707189C3FF50050B732 /* PMInfoFormattedForTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMInfoFormattedForTV.h; sourceTree = "<group>"; };
+		C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMInfoFormattedForTV.m; sourceTree = "<group>"; };
+		C8CD98AB189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeMultipool.h; sourceTree = "<group>"; };
+		C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeMultipool.m; sourceTree = "<group>"; };
 		C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderProtocol.h; sourceTree = "<group>"; };
 		C8DEDE641892FAF100144B83 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
+		C8E343CD189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeLTCRabbit.h; sourceTree = "<group>"; };
+		C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeLTCRabbit.m; sourceTree = "<group>"; };
+		C8E343D0189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeGuardian.h; sourceTree = "<group>"; };
+		C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeGuardian.m; sourceTree = "<group>"; };
 		C8FBBFB818945E97007D7894 /* PMPoolInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolInfoTVC.h; sourceTree = "<group>"; };
 		C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolInfoTVC.m; sourceTree = "<group>"; };
 		C8FBBFBD189541E4007D7894 /* PMPoolInfoOtherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMPoolInfoOtherTVC.h; path = ../PMPoolInfoOtherTVC.h; sourceTree = "<group>"; };
@@ -157,13 +163,9 @@
 				C800DEF518916A3A00A5C4A9 /* Storyboard.storyboard */,
 				C800DEF718916A9100A5C4A9 /* PMPoolTVC.h */,
 				C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */,
-				C825D95C18992F3A00BA0372 /* PMPoolInfoTVCBasis.h */,
-				C825D95D18992F3A00BA0372 /* PMPoolInfoTVCBasis.m */,
-				C825D95F1899300A00BA0372 /* PMDataDownloaderFormatterManager.h */,
-				C825D9601899300A00BA0372 /* PMDataDownloaderFormatterManager.m */,
-				C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */,
-				C8CD98AB189C3AC80088D6D6 /* PMDDFType1.h */,
-				C8CD98AC189C3AC80088D6D6 /* PMDDFType1.m */,
+				C8C52707189C3FF50050B732 /* PMInfoFormattedForTV.h */,
+				C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */,
+				C8C5270A189C46240050B732 /* data downloaders */,
 				C8FBBFBD189541E4007D7894 /* PMPoolInfoOtherTVC.h */,
 				C8FBBFBE189541E4007D7894 /* PMPoolInfoOtherTVC.m */,
 				C8FBBFB818945E97007D7894 /* PMPoolInfoTVC.h */,
@@ -219,6 +221,22 @@
 				C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */,
 			);
 			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		C8C5270A189C46240050B732 /* data downloaders */ = {
+			isa = PBXGroup;
+			children = (
+				C825D95F1899300A00BA0372 /* PMDataDownloaderManager.h */,
+				C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */,
+				C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */,
+				C8CD98AB189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.h */,
+				C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */,
+				C8E343CD189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.h */,
+				C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */,
+				C8E343D0189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.h */,
+				C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */,
+			);
+			name = "data downloaders";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,11 +341,13 @@
 				C800DED618916A1D00A5C4A9 /* Pool_Monitor.xcdatamodeld in Sources */,
 				C800DECF18916A1D00A5C4A9 /* main.m in Sources */,
 				C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */,
-				C825D95E18992F3A00BA0372 /* PMPoolInfoTVCBasis.m in Sources */,
 				C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */,
-				C8CD98AD189C3AC80088D6D6 /* PMDDFType1.m in Sources */,
+				C8CD98AD189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m in Sources */,
 				C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */,
-				C825D9611899300A00BA0372 /* PMDataDownloaderFormatterManager.m in Sources */,
+				C8E343CF189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m in Sources */,
+				C825D9611899300A00BA0372 /* PMDataDownloaderManager.m in Sources */,
+				C8E343D2189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m in Sources */,
+				C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */,
 				C800DED318916A1D00A5C4A9 /* PMAppDelegate.m in Sources */,
 				C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */,
 				C8FBBFBF189541E4007D7894 /* PMPoolInfoOtherTVC.m in Sources */,

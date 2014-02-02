@@ -287,21 +287,7 @@
         
         Pool *selectedPool = (Pool *)[_fetchedResultController objectAtIndexPath:indexPath];
         DLog(@"selected: %@", selectedPool);
-        if([selectedPool.apiAddress rangeOfString:@"multipool"].location != NSNotFound)
-        {
-            [self performSegueWithIdentifier:@"segue show pool info multipool" sender:selectedPool];
-        }
-        
-        else if (([selectedPool.apiAddress rangeOfString:@"guardian"].location != NSNotFound) || ([selectedPool.apiAddress rangeOfString:@"wemineltc"].location != NSNotFound))
-        {
             [self performSegueWithIdentifier:@"segue show pool info" sender:selectedPool];
-        }
-        else
-        {
-            [self performSegueWithIdentifier:@"segue show pool info other" sender:selectedPool];
-        }
-
-        
     }
 }
 
@@ -316,16 +302,16 @@
         PMPoolInfoTVC *dest = segue.destinationViewController;
         dest.pool = sender;
     }
-    else if([segue.identifier isEqualToString:@"segue show pool info multipool"])
-    {
-        PMPoolInfoMultipoolTVC *dest = segue.destinationViewController;
-        dest.pool = sender;
-    }
-    else if([segue.identifier isEqualToString:@"segue show pool info other"])
-    {
-        PMPoolInfoOtherTVC *dest = segue.destinationViewController;
-        dest.pool = sender;
-    }
+//    else if([segue.identifier isEqualToString:@"segue show pool info multipool"])
+//    {
+//        PMPoolInfoMultipoolTVC *dest = segue.destinationViewController;
+//        dest.pool = sender;
+//    }
+//    else if([segue.identifier isEqualToString:@"segue show pool info other"])
+//    {
+//        PMPoolInfoOtherTVC *dest = segue.destinationViewController;
+//        dest.pool = sender;
+//    }
 }
 
 

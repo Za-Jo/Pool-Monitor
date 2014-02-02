@@ -10,6 +10,15 @@
 
 @implementation PMDataDownloaderTypeLTCRabbit
 
+
+-(id)init
+{
+    self = [super init];
+    _infoForTV = [[PMInfoFormattedForTV alloc] init];
+    
+    return self;
+}
+
 -(void)downloadData:(NSString *) url
 {
     NSURL *urlAddress1 = [NSURL URLWithString:url];
@@ -45,7 +54,10 @@
               {
                   DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
                   [self formatData:data];
-                  // DO YOUR WORK HERE
+                  
+                  //At the end, we notify the delegate:
+                  [_delegate dataDownloadedAndFormatted:_infoForTV];
+
               }
               else if ([data length] == 0 && error == nil)
               {
@@ -83,24 +95,27 @@
         
         if([[dic allKeys] containsObject:@"getuserstatus"])
         {
-            [_infoForTV setSectionName:@"General Infos" AtIndex:0];
+            [_infoForTV addSectionWithName:@"General Infos"];
             
             NSDictionary *userStatus = [dic valueForKey:@"getuserstatus"];
 
             
             if([[userStatus allKeys] containsObject:@"hashrate"]){
-                [_infoForTV setLabel:@"Hashrate" inSection:0];
-                [_infoForTV setInfo:[[userStatus valueForKey:@"hashrate"] string] inSection:0];
+                [_infoForTV addLabel:@"Hashrate" inSection:0];
+                NSString *infoString = [NSString stringWithFormat:@"%@",[userStatus valueForKey:@"hashrate"]];
+                [_infoForTV addInfo:infoString inSection:0];
             }
             
             if([[userStatus allKeys] containsObject:@"sharerate"]){
-                [_infoForTV setLabel:@"Sharerate" inSection:0];
-                [_infoForTV setInfo:[[userStatus valueForKey:@"sharerate"] string] inSection:0];
+                [_infoForTV addLabel:@"Sharerate" inSection:0];
+                NSString *infoString = [NSString stringWithFormat:@"%@",[userStatus valueForKey:@"sharerate"]];
+                [_infoForTV addInfo:infoString inSection:0];
             }
             
             if([[userStatus allKeys] containsObject:@"balance"]){
-                [_infoForTV setLabel:@"Balance" inSection:0];
-                [_infoForTV setInfo:[[userStatus valueForKey:@"balance"] string] inSection:0];
+                [_infoForTV addLabel:@"Balance" inSection:0];
+                NSString *infoString = [NSString stringWithFormat:@"%@",[userStatus valueForKey:@"balance"]];
+                [_infoForTV addInfo:infoString inSection:0];
             }
             
         }
@@ -113,24 +128,24 @@
             for(NSDictionary *worker in workers)
             {
                 
-                
                 if([[worker allKeys] containsObject:@"username"]){
-                    [_infoForTV setSectionName:[@"Worker " stringByAppendingString:[worker valueForKey:@"username"]] AtIndex:currentSection];
+                    [_infoForTV addSectionWithName:[@"Worker " stringByAppendingString:[worker valueForKey:@"username"]]];
                 }
                 else {
-                    [_infoForTV setSectionName:[NSString stringWithFormat:@"Workers %d", currentSection] AtIndex:currentSection];
+                    [_infoForTV addSectionWithName:[NSString stringWithFormat:@"Workers %d", currentSection]];
                 }
                 
                 if([[worker allKeys] containsObject:@"hasrate"]){
-                    [_infoForTV setLabel:@"Hashrate" inSection:1];
-                    [_infoForTV setInfo:[[worker valueForKey:@"hashrate"] string] inSection:1];
+                    [_infoForTV addLabel:@"Hashrate" inSection:currentSection];
+                    NSString *infoString = [NSString stringWithFormat:@"%@",[worker valueForKey:@"hashrate"]];
+                    [_infoForTV addInfo:infoString inSection:currentSection];
                 }
                 
                 if([[worker allKeys] containsObject:@"active"]){
                     BOOL active =[[worker valueForKey:@"active"] intValue];
                     
-                    [_infoForTV setLabel:@"Active ?" inSection:currentSection];
-                    [_infoForTV setInfo:active ? @"YES" : @"NO" inSection:1];
+                    [_infoForTV addLabel:@"Active ?" inSection:currentSection];
+                    [_infoForTV addInfo:active ? @"YES" : @"NO" inSection:currentSection];
                 }
                 
                 //go to next section

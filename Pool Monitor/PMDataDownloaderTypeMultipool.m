@@ -13,6 +13,7 @@
 -(void)downloadData:(NSString *) url
 {
     NSURL *urlAddress = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    _infoForTV = [[PMInfoFormattedForTV alloc] init];
     
     
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:urlAddress];
@@ -25,6 +26,8 @@
          {
              DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
              [self formatData:data];
+             [_delegate dataDownloadedAndFormatted:_infoForTV];
+
          }
          else if ([data length] == 0 && error == nil)
          {
@@ -58,7 +61,7 @@
         //SECTION 1: general informations
 
         
-        [_infoForTV setSectionName:@"General Informations" AtIndex:0];
+        [_infoForTV addSectionWithName:@"General Informations"];
         
         //section 1: currencies now + hashrate
         NSDictionary *currencies = [NSDictionary dictionary];
@@ -72,15 +75,15 @@
             for(NSString *key in allCurrenciesKeys)
             {
                 if([[[currencies valueForKey:key] valueForKey:@"hashrate"] intValue] != 0){
-                    [_infoForTV setLabel:[NSString stringWithFormat:@"Hashrate [%@]", key] inSection:0];
-                    [_infoForTV setInfo:[[[currencies valueForKey:key] valueForKey:@"hashrate"] string] inSection:0];
+                    [_infoForTV addLabel:[NSString stringWithFormat:@"Hashrate [%@]", key] inSection:0];
+                    [_infoForTV addInfo:[[currencies valueForKey:key] valueForKey:@"hashrate"] inSection:0];
                     active = YES;
                 }
             }
         }
         
-        [_infoForTV setLabel:@"Active" inSection:0];
-        [_infoForTV setInfo:active ? @"YES" : @"NO" inSection:0];
+        [_infoForTV addLabel:@"Active" inSection:0];
+        [_infoForTV addInfo:active ? @"YES" : @"NO" inSection:0];
         
         
         if([[dic allKeys] containsObject:@"currency"])
@@ -91,10 +94,10 @@
             for(NSString *key in allCurrenciesKeys)
             {
                 NSString *amount = [NSString stringWithFormat: @"%.6f", [[[currencies valueForKey:key] valueForKey:@"confirmed_rewards"] floatValue] ];
-                if([amount floatValue] > 0.f)
+                if([amount floatValue] > 0)
                 {
-                    [_infoForTV setLabel:key inSection:0];
-                    [_infoForTV setLabel:amount inSection:0];
+                    [_infoForTV addLabel:key inSection:0];
+                    [_infoForTV addInfo:amount inSection:0];
                 }
             }
         }
