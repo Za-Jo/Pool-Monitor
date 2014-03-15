@@ -24,19 +24,22 @@
        || ([url rangeOfString:@"wemineltc"].location != NSNotFound) )
     {
         _downloader = [[PMDataDownloaderTypeGuardian alloc] init];
-        [(PMDataDownloaderTypeGuardian*)_downloader setDelegate:self];
-        [_downloader downloadData:url];
     }
     else if([url rangeOfString:@"multipool"].location != NSNotFound)
     {
         _downloader = [[PMDataDownloaderTypeMultipool alloc] init];
-        [(PMDataDownloaderTypeMultipool*)_downloader setDelegate:self];
-        [_downloader downloadData:url];
+    }
+    else if([url rangeOfString:@"www.litecoinpool.org"].location != NSNotFound)
+    {
+        _downloader = [[PMDataDownloaderTypeLitecoinPool alloc] init];
     }
     else
     {
         _downloader = [[PMDataDownloaderTypeLTCRabbit alloc] init];
-        [(PMDataDownloaderTypeLTCRabbit*)_downloader setDelegate:self];
+    }
+    
+    if(_downloader != nil){
+        [_downloader setDelegate:self];
         [_downloader downloadData:url];
     }
 
@@ -52,6 +55,11 @@
 -(void)dataNotDownloadedBecauseError: (NSError *) error
 {
     [_delegate dataNotDownloadedBecauseError:error];
+}
+
+-(void)cancel
+{
+    [_downloader cancel];
 }
 
 @end

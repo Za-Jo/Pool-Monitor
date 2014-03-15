@@ -8,6 +8,13 @@
 
 #import "PMDataDownloaderTypeLTCRabbit.h"
 
+
+@interface PMDataDownloaderTypeLTCRabbit ()
+@property (nonatomic) BOOL stopRequested;
+@end
+
+
+
 @implementation PMDataDownloaderTypeLTCRabbit
 
 
@@ -15,8 +22,14 @@
 {
     self = [super init];
     _infoForTV = [[PMInfoFormattedForTV alloc] init];
-    
+    _stopRequested = NO;
     return self;
+}
+
+-(void)cancel
+{
+    _delegate = nil;
+    _stopRequested = YES;
 }
 
 -(void)downloadData:(NSString *) url
@@ -25,19 +38,21 @@
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:urlAddress1];
     [NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue currentQueue]completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
-         if ([data length] >0 && error == nil)
-         {
-             DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
-             [self formatData:data];
-         }
-         else if ([data length] == 0 && error == nil)
-         {
-             DLog(@"Nothing was downloaded.");
-             [_delegate dataNotDownloadedBecauseError:[NSError errorWithDomain:@"NO DATA" code:1 userInfo:nil]];
-         }
-         else if (error != nil){
-             DLog(@"Error = %@", error);
-             [_delegate dataNotDownloadedBecauseError:error];
+         if(_stopRequested == NO){
+             if ([data length] >0 && error == nil)
+             {
+                 DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
+                 [self formatData:data];
+             }
+             else if ([data length] == 0 && error == nil)
+             {
+                 DLog(@"Nothing was downloaded.");
+                 [_delegate dataNotDownloadedBecauseError:[NSError errorWithDomain:@"NO DATA" code:1 userInfo:nil]];
+             }
+             else if (error != nil){
+                 DLog(@"Error = %@", error);
+                 [_delegate dataNotDownloadedBecauseError:error];
+             }
          }
          
          
@@ -95,7 +110,7 @@
         
         if([[dic allKeys] containsObject:@"getuserstatus"])
         {
-            [_infoForTV addSectionWithName:@"General Infos"];
+            [_infoForTV addSectionWithName:@"General Information"];
             
             NSDictionary *userStatus = [dic valueForKey:@"getuserstatus"];
 

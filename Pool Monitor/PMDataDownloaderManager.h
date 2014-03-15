@@ -12,11 +12,12 @@
 #import "PMDataDownloaderTypeGuardian.h"
 #import "PMDataDownloaderTypeLTCRabbit.h"
 #import "PMDataDownloaderTypeMultipool.h"
+#import "PMDataDownloaderTypeLitecoinPool.h"
 
 
 @interface PMDataDownloaderManager : NSObject <PMDataDownloaderDelegate>
 -(void)downloadData:(NSString *) url;
 @property (nonatomic, strong) id<PMDataDownloaderDelegate> delegate;
-
+-(void)cancel;
 
 @end

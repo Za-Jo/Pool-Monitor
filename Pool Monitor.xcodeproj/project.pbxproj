@@ -24,14 +24,15 @@
 		C800DEEC18916A1D00A5C4A9 /* Pool_MonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DEEB18916A1D00A5C4A9 /* Pool_MonitorTests.m */; };
 		C800DEF618916A3A00A5C4A9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C800DEF518916A3A00A5C4A9 /* Storyboard.storyboard */; };
 		C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */; };
-		C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = C800DF0418917A7F00A5C4A9 /* Pool.m */; };
 		C825D9611899300A00BA0372 /* PMDataDownloaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */; };
-		C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */; };
-		C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */ = {isa = PBXBuildFile; fileRef = C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */; };
-		C8993199189EAD8200D7BA79 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */; };
+		C87F789A18D4C04F004E0FA5 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = C87F789918D4C04F004E0FA5 /* Pool.m */; };
+		C87F789D18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.m in Sources */ = {isa = PBXBuildFile; fileRef = C87F789C18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.m */; };
+		C87F78A018D4CECC004E0FA5 /* PMTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C87F789F18D4CECC004E0FA5 /* PMTools.m */; };
+		C899319C189EAE8500D7BA79 /* MBProgressHUDOnTop.m in Sources */ = {isa = PBXBuildFile; fileRef = C899319B189EAE8500D7BA79 /* MBProgressHUDOnTop.m */; };
+		C89931A3189EAEB800D7BA79 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C89931A2189EAEA800D7BA79 /* libMBProgressHUD.a */; };
+		C89931A6189EAEF300D7BA79 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C89931A5189EAEF300D7BA79 /* UIWindow+Extension.m */; };
 		C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */; };
 		C8CD98AD189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */; };
-		C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */; };
 		C8E343CF189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */; };
 		C8E343D2189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */; };
 		C8E343D5189E59FD00FA01E3 /* PMHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E343D4189E59FD00FA01E3 /* PMHelpVC.m */; };
@@ -46,9 +47,9 @@
 			remoteGlobalIDString = C800DEBC18916A1D00A5C4A9;
 			remoteInfo = "Pool Monitor";
 		};
-		C8993197189EAC9E00D7BA79 /* PBXContainerItemProxy */ = {
+		C89931A1189EAEA800D7BA79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */;
+			containerPortal = C899319D189EAEA800D7BA79 /* MBProgressHUD.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D286A7491518C70F00E13FB8;
 			remoteInfo = MBProgressHUD;
@@ -77,22 +78,24 @@
 		C800DEF518916A3A00A5C4A9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		C800DEF718916A9100A5C4A9 /* PMPoolTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoolTVC.h; sourceTree = "<group>"; };
 		C800DEF818916A9100A5C4A9 /* PMPoolTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoolTVC.m; sourceTree = "<group>"; };
-		C800DF0318917A7F00A5C4A9 /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pool.h; path = "Pool Monitor/Pool.h"; sourceTree = "<group>"; };
-		C800DF0418917A7F00A5C4A9 /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pool.m; path = "Pool Monitor/Pool.m"; sourceTree = "<group>"; };
 		C825D95F1899300A00BA0372 /* PMDataDownloaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderManager.h; sourceTree = "<group>"; };
 		C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderManager.m; sourceTree = "<group>"; };
-		C831DF9C1891B98A002EBB2D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		C831DF9E1891B98A002EBB2D /* MBProgressHUDOnTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDOnTop.h; sourceTree = "<group>"; };
-		C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUDOnTop.m; sourceTree = "<group>"; };
-		C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../External Library/MBProgressHUD-master/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
+		C87F789818D4C04F004E0FA5 /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		C87F789918D4C04F004E0FA5 /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pool.m; sourceTree = "<group>"; };
+		C87F789B18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeLitecoinPool.h; sourceTree = "<group>"; };
+		C87F789C18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeLitecoinPool.m; sourceTree = "<group>"; };
+		C87F789E18D4CECC004E0FA5 /* PMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTools.h; sourceTree = "<group>"; };
+		C87F789F18D4CECC004E0FA5 /* PMTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTools.m; sourceTree = "<group>"; };
+		C899319A189EAE8500D7BA79 /* MBProgressHUDOnTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUDOnTop.h; path = ../LMovie/LMovie/MBProgressHUDOnTop.h; sourceTree = "<group>"; };
+		C899319B189EAE8500D7BA79 /* MBProgressHUDOnTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUDOnTop.m; path = ../LMovie/LMovie/MBProgressHUDOnTop.m; sourceTree = "<group>"; };
+		C899319D189EAEA800D7BA79 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../External Library/MBProgressHUD-master/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
+		C89931A4189EAEF300D7BA79 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+Extension.h"; path = "../LMovie/UIWindow+Extension.h"; sourceTree = "<group>"; };
+		C89931A5189EAEF300D7BA79 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+Extension.m"; path = "../LMovie/UIWindow+Extension.m"; sourceTree = "<group>"; };
 		C8C52707189C3FF50050B732 /* PMInfoFormattedForTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMInfoFormattedForTV.h; sourceTree = "<group>"; };
 		C8C52708189C3FF50050B732 /* PMInfoFormattedForTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMInfoFormattedForTV.m; sourceTree = "<group>"; };
 		C8CD98AB189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeMultipool.h; sourceTree = "<group>"; };
 		C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeMultipool.m; sourceTree = "<group>"; };
 		C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderProtocol.h; sourceTree = "<group>"; };
-		C8DEDE641892FAF100144B83 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
-		C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		C8E343CD189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeLTCRabbit.h; sourceTree = "<group>"; };
 		C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataDownloaderTypeLTCRabbit.m; sourceTree = "<group>"; };
 		C8E343D0189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataDownloaderTypeGuardian.h; sourceTree = "<group>"; };
@@ -108,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8993199189EAD8200D7BA79 /* libMBProgressHUD.a in Frameworks */,
+				C89931A3189EAEB800D7BA79 /* libMBProgressHUD.a in Frameworks */,
 				C800DEC318916A1D00A5C4A9 /* CoreGraphics.framework in Frameworks */,
 				C800DEC718916A1D00A5C4A9 /* CoreData.framework in Frameworks */,
 				C800DEC518916A1D00A5C4A9 /* UIKit.framework in Frameworks */,
@@ -133,10 +136,8 @@
 		C800DEB418916A1D00A5C4A9 = {
 			isa = PBXGroup;
 			children = (
-				C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */,
-				C831DFA21891B98F002EBB2D /* MBProgressHUD */,
-				C800DF0318917A7F00A5C4A9 /* Pool.h */,
-				C800DF0418917A7F00A5C4A9 /* Pool.m */,
+				C899319D189EAEA800D7BA79 /* MBProgressHUD.xcodeproj */,
+				C89931A7189EAEF800D7BA79 /* MBProgressHubExtension */,
 				C800DEC818916A1D00A5C4A9 /* Pool Monitor */,
 				C800DEE518916A1D00A5C4A9 /* Pool MonitorTests */,
 				C800DEBF18916A1D00A5C4A9 /* Frameworks */,
@@ -180,6 +181,8 @@
 				C8FBBFB918945E97007D7894 /* PMPoolInfoTVC.m */,
 				C800DED718916A1D00A5C4A9 /* Images.xcassets */,
 				C800DED418916A1D00A5C4A9 /* Pool_Monitor.xcdatamodeld */,
+				C87F789818D4C04F004E0FA5 /* Pool.h */,
+				C87F789918D4C04F004E0FA5 /* Pool.m */,
 				C800DEC918916A1D00A5C4A9 /* Supporting Files */,
 			);
 			path = "Pool Monitor";
@@ -216,39 +219,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C831DFA21891B98F002EBB2D /* MBProgressHUD */ = {
+		C899319E189EAEA800D7BA79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8DEDE641892FAF100144B83 /* UIWindow+Extension.h */,
-				C8DEDE651892FAF100144B83 /* UIWindow+Extension.m */,
-				C831DF9C1891B98A002EBB2D /* MBProgressHUD.h */,
-				C831DF9D1891B98A002EBB2D /* MBProgressHUD.m */,
-				C831DF9E1891B98A002EBB2D /* MBProgressHUDOnTop.h */,
-				C831DF9F1891B98A002EBB2D /* MBProgressHUDOnTop.m */,
-			);
-			name = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		C8993194189EAC9E00D7BA79 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */,
+				C89931A2189EAEA800D7BA79 /* libMBProgressHUD.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C89931A7189EAEF800D7BA79 /* MBProgressHubExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C89931A4189EAEF300D7BA79 /* UIWindow+Extension.h */,
+				C89931A5189EAEF300D7BA79 /* UIWindow+Extension.m */,
+				C899319A189EAE8500D7BA79 /* MBProgressHUDOnTop.h */,
+				C899319B189EAE8500D7BA79 /* MBProgressHUDOnTop.m */,
+			);
+			name = MBProgressHubExtension;
 			sourceTree = "<group>";
 		};
 		C8C5270A189C46240050B732 /* data downloaders */ = {
 			isa = PBXGroup;
 			children = (
+				C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */,
+				C87F789E18D4CECC004E0FA5 /* PMTools.h */,
+				C87F789F18D4CECC004E0FA5 /* PMTools.m */,
 				C825D95F1899300A00BA0372 /* PMDataDownloaderManager.h */,
 				C825D9601899300A00BA0372 /* PMDataDownloaderManager.m */,
-				C8CD98AE189C3D1F0088D6D6 /* PMDataDownloaderProtocol.h */,
 				C8CD98AB189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.h */,
 				C8CD98AC189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m */,
 				C8E343CD189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.h */,
 				C8E343CE189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m */,
 				C8E343D0189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.h */,
 				C8E343D1189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m */,
+				C87F789B18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.h */,
+				C87F789C18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.m */,
 			);
 			name = "data downloaders";
 			sourceTree = "<group>";
@@ -318,8 +323,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C8993194189EAC9E00D7BA79 /* Products */;
-					ProjectRef = C8993193189EAC9E00D7BA79 /* MBProgressHUD.xcodeproj */;
+					ProductGroup = C899319E189EAEA800D7BA79 /* Products */;
+					ProjectRef = C899319D189EAEA800D7BA79 /* MBProgressHUD.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -331,11 +336,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C8993198189EAC9E00D7BA79 /* libMBProgressHUD.a */ = {
+		C89931A2189EAEA800D7BA79 /* libMBProgressHUD.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libMBProgressHUD.a;
-			remoteRef = C8993197189EAC9E00D7BA79 /* PBXContainerItemProxy */;
+			remoteRef = C89931A1189EAEA800D7BA79 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -367,20 +372,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8FBBFBA18945E97007D7894 /* PMPoolInfoTVC.m in Sources */,
+				C89931A6189EAEF300D7BA79 /* UIWindow+Extension.m in Sources */,
+				C87F78A018D4CECC004E0FA5 /* PMTools.m in Sources */,
 				C800DED618916A1D00A5C4A9 /* Pool_Monitor.xcdatamodeld in Sources */,
 				C800DECF18916A1D00A5C4A9 /* main.m in Sources */,
+				C87F789D18D4C72E004E0FA5 /* PMDataDownloaderTypeLitecoinPool.m in Sources */,
 				C800DEF918916A9100A5C4A9 /* PMPoolTVC.m in Sources */,
-				C8DEDE661892FAF100144B83 /* UIWindow+Extension.m in Sources */,
 				C8CD98AD189C3AC80088D6D6 /* PMDataDownloaderTypeMultipool.m in Sources */,
-				C831DFA11891B98A002EBB2D /* MBProgressHUDOnTop.m in Sources */,
+				C899319C189EAE8500D7BA79 /* MBProgressHUDOnTop.m in Sources */,
 				C8E343CF189D0A7100FA01E3 /* PMDataDownloaderTypeLTCRabbit.m in Sources */,
 				C825D9611899300A00BA0372 /* PMDataDownloaderManager.m in Sources */,
 				C8E343D2189D0FBC00FA01E3 /* PMDataDownloaderTypeGuardian.m in Sources */,
 				C8C52709189C3FF50050B732 /* PMInfoFormattedForTV.m in Sources */,
 				C800DED318916A1D00A5C4A9 /* PMAppDelegate.m in Sources */,
-				C800DF0518917A7F00A5C4A9 /* Pool.m in Sources */,
 				C8E343D5189E59FD00FA01E3 /* PMHelpVC.m in Sources */,
-				C831DFA01891B98A002EBB2D /* MBProgressHUD.m in Sources */,
+				C87F789A18D4C04F004E0FA5 /* Pool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

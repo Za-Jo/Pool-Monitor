@@ -2,7 +2,7 @@
 //  Pool.m
 //  Pool Monitor
 //
-//  Created by Jonathan Duss on 23.01.14.
+//  Created by Jonathan Duss on 15.03.14.
 //  Copyright (c) 2014 Jonathan Duss. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 @implementation Pool
 
-@dynamic name;
 @dynamic apiAddress;
+@dynamic name;
 
 @end

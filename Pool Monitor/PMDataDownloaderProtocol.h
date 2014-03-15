@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PMInfoFormattedForTV.h"
 
-@protocol PMDataDownloaderProtocol <NSObject>
 
-@required
--(void)downloadData:(NSString *) url;
-@end
 
 
 @protocol PMDataDownloaderDelegate <NSObject>
@@ -22,4 +18,13 @@
 -(void)dataDownloadedAndFormatted: (PMInfoFormattedForTV *) informations;
 -(void)dataNotDownloadedBecauseError: (NSError *) error;
 
+@end
+
+
+@protocol PMDataDownloaderProtocol <NSObject>
+
+@required
+-(void)setDelegate:(id<PMDataDownloaderDelegate>) delegate;
+-(void)downloadData:(NSString *) url;
+-(void)cancel;
 @end

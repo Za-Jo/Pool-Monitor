@@ -8,10 +8,32 @@
 
 #import "PMDataDownloaderTypeMultipool.h"
 
+@interface PMDataDownloaderTypeMultipool ()
+@property (nonatomic) BOOL stopRequested;
+@end
+
 @implementation PMDataDownloaderTypeMultipool
+
+
+-(id)init
+{
+    self = [super init];
+    _infoForTV = [[PMInfoFormattedForTV alloc] init];
+    _stopRequested = NO;
+    
+    return self;
+}
+
+
+-(void)cancel
+{
+    _delegate = nil;
+    _stopRequested = YES;
+}
 
 -(void)downloadData:(NSString *) url
 {
+    
     NSURL *urlAddress = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     _infoForTV = [[PMInfoFormattedForTV alloc] init];
     
@@ -21,22 +43,23 @@
     
     [NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue currentQueue]completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
-         
-         if ([data length] >0 && error == nil)
-         {
-             DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
-             [self formatData:data];
-             [_delegate dataDownloadedAndFormatted:_infoForTV];
-
-         }
-         else if ([data length] == 0 && error == nil)
-         {
-             DLog(@"Nothing was downloaded.");
-             [_delegate dataNotDownloadedBecauseError:[NSError errorWithDomain:@"NO DATA" code:1 userInfo:nil]];
-         }
-         else if (error != nil){
-             DLog(@"Error = %@", error);
-             [_delegate dataNotDownloadedBecauseError:error];
+         if(_stopRequested == NO){
+             if ([data length] >0 && error == nil)
+             {
+                 DLog(@"%@",[[NSString alloc] initWithData:data encoding:0]);
+                 [self formatData:data];
+                 [_delegate dataDownloadedAndFormatted:_infoForTV];
+                 
+             }
+             else if ([data length] == 0 && error == nil)
+             {
+                 DLog(@"Nothing was downloaded.");
+                 [_delegate dataNotDownloadedBecauseError:[NSError errorWithDomain:@"NO DATA" code:1 userInfo:nil]];
+             }
+             else if (error != nil){
+                 DLog(@"Error = %@", error);
+                 [_delegate dataNotDownloadedBecauseError:error];
+             }
          }
      }];
 
@@ -61,7 +84,7 @@
         //SECTION 1: general informations
 
         
-        [_infoForTV addSectionWithName:@"General Informations"];
+        [_infoForTV addSectionWithName:@"General Information"];
         
         //section 1: currencies now + hashrate
         NSDictionary *currencies = [NSDictionary dictionary];

@@ -15,6 +15,7 @@
 -(void)loadData;
 @property (nonatomic, strong) MBProgressHUDOnTop *progressHUD;
 @property (nonatomic, strong) PMInfoFormattedForTV *infoToShow;
+@property (nonatomic, strong) PMDataDownloaderManager *dm;
 
 @end
 
@@ -63,19 +64,33 @@
     [self loadData];
 }
 
+-(IBAction)handlePanGesture:(UIPanGestureRecognizer*)sender
+{
+    DLog(@"HEY HEY HEY");
+    [_progressHUD hideProgressAnimationOnTop];
+    _progressHUD = nil;
+    [_dm cancel];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
 -(void)loadData
 {
     _progressHUD = [[MBProgressHUDOnTop alloc] initOnTop];
     [_progressHUD setMode:MBProgressHUDModeIndeterminate];
     [_progressHUD setLabelText:@"Updating"];
+    [_progressHUD setDetailsLabelText:@"Touch to cancel"];
     [_progressHUD setMinShowTime:1];
     [_progressHUD showProgressAnimationOnTop];
     [_progressHUD setRemoveFromSuperViewOnHide:YES];
     
-    PMDataDownloaderManager *dm = [[PMDataDownloaderManager alloc] init];
-    dm.delegate = self;
-    [dm downloadData:_pool.apiAddress];
+    _dm = [[PMDataDownloaderManager alloc] init];
+    _dm.delegate = self;
+    [_dm downloadData:_pool.apiAddress];
     _infoToShow = nil;
+    
+    [_progressHUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)]];
+    
 }
 
 
@@ -95,7 +110,16 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
     _progressHUD = nil;
     
-    [[[UIAlertView alloc] initWithTitle:@"Network error" message:@"Unable to get the informations due to a network error or due to a wrong api address" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+
+    
+    if([_pool.apiAddress rangeOfString:@"multipool"].location != NSNotFound)
+    {
+            [[[UIAlertView alloc] initWithTitle:@"Network error" message:@"Please control the api address and your network. If this message appear again, this is certainly because multipool has some problems. =(" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+    }
+    else
+    {
+            [[[UIAlertView alloc] initWithTitle:@"Network error" message:@"Unable to get the informations due to a network error or due to a wrong api address" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+    }
 }
 
 
