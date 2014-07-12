@@ -1,0 +1,22 @@
+{
+    "confirmed_rewards": "15.5443",
+    "payout_history": "9.4958",
+    "round_estimate": "0.0015",
+    "round_shares": "328",
+    "total_hashrate": 1300,
+    "username": "apiapi",
+    "workers": {
+        "WARNING_DEBUG.1": {
+            "alive": "0",
+            "hashrate": 0
+        },
+        "WARNING_DEBUG.2": {
+            "alive": "1",
+            "hashrate": 600
+        },
+        "WARNING_DEBUG.3": {
+            "alive": "1",
+            "hashrate": 700
+        }
+    }
+}

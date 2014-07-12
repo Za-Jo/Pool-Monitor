@@ -10,12 +10,23 @@
 #import "PMAppDelegate.h"
 #import "Pool.h"
 #import "PMPoolInfoTVC.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAITracker.h"
+#import "GAIDictionaryBuilder.h"
+
+#define PMPoolTVC_tv_height_addON 474
+#define PMPoolTVC_tv_height_addOFF 524
+
 
 @interface PMPoolTVC ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultController;
 @property (nonatomic, weak) NSManagedObjectContext *context;
 @property (nonatomic, weak) Pool *editedPool;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
 @property (nonatomic, weak) PMAppDelegate *appDelegate;
+@property (nonatomic) BOOL bannerIsVisible;
 @end
 
 @implementation PMPoolTVC
@@ -23,11 +34,14 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
+    self = [super init];
+    //self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
     return self;
+    
+
 }
 
 //===================================================================================================
@@ -35,7 +49,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //Google analytics stuff
+    [[GAI sharedInstance].defaultTracker set:kGAIScreenName
+                                       value:@"Home Screen"];
+    
+    // Send the screen view.
+    [[GAI sharedInstance].defaultTracker
+     send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    
     _appDelegate = [[UIApplication sharedApplication] delegate];
     _context = [_appDelegate managedObjectContext];
     [[self fetchedResultController] performFetch:nil];
@@ -43,7 +66,9 @@
     [self.tableView setAllowsSelection:YES];
     
     self.navigationController.toolbarHidden = NO;
-
+    
+    _adBanner.delegate = self;
+    _bannerIsVisible = YES;
 
 }
 
@@ -54,6 +79,16 @@
     _fetchedResultController.delegate = nil;
     _fetchedResultController = nil;
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    if([[NSUserDefaults standardUserDefaults] boolForKey:FIRST_OPEN] ==  NO)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FIRST_OPEN];
+        [[[UIAlertView alloc] initWithTitle:@"Information" message:@"New pools are now supported. \n If you have any problem or any suggestion, you will find how to contact me under the \"?\" section " delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 
@@ -92,9 +127,11 @@
     }
     else
     {
-        Pool *newPool = [NSEntityDescription insertNewObjectForEntityForName:@"Pool" inManagedObjectContext:_context];
-        newPool.name = [[alertView textFieldAtIndex:0] text];
-        newPool.apiAddress = [[alertView textFieldAtIndex:1] text];
+        if(buttonIndex == 1){
+            Pool *newPool = [NSEntityDescription insertNewObjectForEntityForName:@"Pool" inManagedObjectContext:_context];
+            newPool.name = [[alertView textFieldAtIndex:0] text];
+            newPool.apiAddress = [[alertView textFieldAtIndex:1] text];
+        }
     }
     [_appDelegate saveContext];
 }
@@ -310,6 +347,85 @@
 //        PMPoolInfoOtherTVC *dest = segue.destinationViewController;
 //        dest.pool = sender;
 //    }
+}
+
+
+
+
+
+
+
+//##################################################################################################
+//##################################################################################################
+//##################################################################################################
+//##################################################################################################
+
+
+#pragma mark - IAD MANAGEMENT
+
+//===================================================================================================
+//===================================================================================================
+- (IBAction)addOFF:(id)sender {
+    [self bannerView:self.adBanner didFailToReceiveAdWithError:nil];
+}
+- (IBAction)adON:(id)sender {
+    [self bannerViewDidLoadAd:self.adBanner];
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    NSLog(@"Banner view is beginning an ad action");
+    BOOL shouldExecuteAction = YES; //[self allowActionToRun]; // your application implements this method
+    if (!willLeave && shouldExecuteAction)
+    {
+        // insert code here to suspend any services that might conflict with the advertisement
+    }
+    return shouldExecuteAction;
+}
+
+//===================================================================================================
+//===================================================================================================
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, -2*banner.frame.size.height);
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+        
+        CGRect b = self.tableView.frame;
+        b.size.height = PMPoolTVC_tv_height_addON;
+        b.origin.x = 0;
+        b.origin.y = 0;
+        
+        self.tableView.frame = b;
+    }
+}
+
+//===================================================================================================
+//===================================================================================================
+
+//ERROR HANDLING
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    if (self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        // Assumes the banner view is placed at the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, 2*banner.frame.size.height);
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+        
+        CGRect b = self.tableView.frame;
+        b.size.height = PMPoolTVC_tv_height_addOFF;
+        b.origin.x = 0;
+        b.origin.y = 0;
+        
+        self.tableView.frame = b;
+    }
 }
 
 

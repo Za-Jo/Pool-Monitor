@@ -16,7 +16,8 @@ Manage the rootview: a TVC showing the pools added by the user
  */
 
 #import <UIKit/UIKit.h>
+#import "iAd/ADBannerView.h"
 
-@interface PMPoolTVC : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
+@interface PMPoolTVC : UIViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate>
 
 @end

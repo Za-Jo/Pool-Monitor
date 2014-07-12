@@ -1,0 +1,81 @@
+{
+  "getappdata": {
+    "general": {
+      "message": "hello"
+    },
+    "pool": {
+      "hashrate_scrypt": 4309168,
+      "hashrate_x11": 5135532,
+      "workers": 5604,
+      "ltc_mh_scrypt": 0.09345,
+      "ltc_mh_x11": 0.01721,
+      "hashrate": 4309168,
+      "basis_pps": 0.070884,
+      "alt_pps": 0,
+      "alt_bonus": 0
+    },
+    "ltc_exchange_rates": {
+      "USD": "10.4801",
+      "EUR": "7.698"
+    },
+    "btc_exchange_rates": {
+      "USD": "613.178",
+      "EUR": "455.59918"
+    },
+    "user": {
+      "username": "Zatixrabbit",
+      "balance": 0.46329216,
+      "hashrate_scrypt": 0,
+      "hashrate_x11": 0,
+      "invalid_shares_scrypt": 0,
+      "invalid_shares_x11": 0,
+      "sharerate": 0,
+      "invalid_share_rate": 0,
+      "hashrate": 0
+    },
+    "worker": [
+      {
+        "name": "Zatixrabbit.w1",
+        "hashrate": 501,
+        "active": 1,
+        "monitoring": 1,
+        "algo": "x11"
+      },
+      {
+        "name": "Zatixrabbit.w2",
+        "hashrate": 0,
+        "active": 0,
+        "monitoring": 0,
+        "algo": "scrypt"
+      },
+      {
+        "name": "Zatixrabbit.w3",
+        "hashrate": 0,
+        "active": 0,
+        "monitoring": 0,
+        "algo": "scrypt"
+      }
+    ],
+    "earnings": {
+      "basis": [
+        {
+          "timestamp": "2014-06-11 01:01:15",
+          "amount": 0.00030399
+        },
+        {
+          "timestamp": "2014-06-11 02:01:14",
+          "amount": 0.00010334
+        }
+      ],
+      "alt": [],
+      "24h_total": 0,
+      "24h_basis": 0,
+      "24h_alt": 0,
+      "24h_affiliate": 0,
+      "48h_total": 0.00040733,
+      "48h_basis": 0.00040733,
+      "48h_alt": 0,
+      "48h_affiliate": 0
+    }
+  }
+}

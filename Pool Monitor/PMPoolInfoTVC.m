@@ -9,6 +9,14 @@
 #import "PMPoolInfoTVC.h"
 #import "MBProgressHUDOnTop.h"
 #import "PMDataDownloaderManager.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAITracker.h"
+#import "GAIDictionaryBuilder.h"
+
+#define BUTTON_SHOW_MORE_LABEL @"Show more information"
+#define BUTTON_SHOW_BASIC_LABEL @"Show basic information"
+
 
 @interface PMPoolInfoTVC ()
 - (IBAction)reload:(id)sender;
@@ -16,6 +24,8 @@
 @property (nonatomic, strong) MBProgressHUDOnTop *progressHUD;
 @property (nonatomic, strong) PMInfoFormattedForTV *infoToShow;
 @property (nonatomic, strong) PMDataDownloaderManager *dm;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *showDensityInformationButton;
+-(void)updateButtonshowInformationDensity;
 
 @end
 
@@ -23,7 +33,8 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
+    self = [super init];
+    //self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -33,6 +44,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Google analytics stuff
+    [[GAI sharedInstance].defaultTracker set:kGAIScreenName
+                                       value:@"Pool view"];
+    
+    // Send the screen view.
+    [[GAI sharedInstance].defaultTracker
+     send:[[GAIDictionaryBuilder createAppView] build]];
+    _showDensityInformationButton.enabled = NO;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,6 +65,9 @@
 {
     [super viewWillAppear:animated];
     self.title = _pool.name;
+    self.navigationController.toolbarHidden = NO;
+    [self updateButtonshowInformationDensity];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -60,10 +83,43 @@
 }
 
 
+//###########################################################
 - (IBAction)reload:(id)sender {
     [self loadData];
 }
 
+-(void)updateButtonshowInformationDensity
+{
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:SETTING_INFO_SHOWN_KEY] isEqualToString:SETTING_INFO_SHOWN_BASIC])
+    {
+        _showDensityInformationButton.title = @"Show more information";
+
+    }
+    else
+    {
+        _showDensityInformationButton.title = @"Show less information";
+    }
+    
+}
+
+
+//###########################################################
+- (IBAction)showInformationDentityPressed:(UIBarButtonItem *)sender {
+    
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:SETTING_INFO_SHOWN_KEY] isEqualToString:SETTING_INFO_SHOWN_BASIC])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:SETTING_INFO_SHOWN_ADVANCED forKey:SETTING_INFO_SHOWN_KEY];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:SETTING_INFO_SHOWN_BASIC forKey:SETTING_INFO_SHOWN_KEY];
+    }
+    [self updateButtonshowInformationDensity];
+    [self reload:nil];
+}
+
+
+//###########################################################
 -(IBAction)handlePanGesture:(UIPanGestureRecognizer*)sender
 {
     DLog(@"HEY HEY HEY");
@@ -74,6 +130,8 @@
     
 }
 
+
+//###########################################################
 -(void)loadData
 {
     _progressHUD = [[MBProgressHUDOnTop alloc] initOnTop];
@@ -101,6 +159,7 @@
     [_progressHUD hideProgressAnimationOnTop];
     _progressHUD = nil;
     [self.tableView reloadData];
+    _showDensityInformationButton.enabled = YES;
 }
 
 
@@ -139,7 +198,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    DLog(@"number row in section %d: %d", section, [_infoToShow numberRowInSection:section]);
+    DLog(@"number row in section %ld: %lu", (long)section, (unsigned long)[_infoToShow numberRowInSection:section]);
     return [_infoToShow numberRowInSection:section];
 }
 

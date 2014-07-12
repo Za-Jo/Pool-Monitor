@@ -34,7 +34,7 @@
     
     NSURL *urlAddress = [NSURL URLWithString:url];
     _infoForTV = [[PMInfoFormattedForTV alloc] init];
-
+    
     
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:urlAddress];
     
@@ -63,8 +63,15 @@
 -(void)formatData:(NSData *)data
 {
     _data = data;
+    
+//    #warning load json from file for debug
+//    NSLog(@"Warning: load json from file for debug");
+//    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"liteguardian"ofType:@"json"];
+//    _data = [NSData dataWithContentsOfFile:jsonPath];
+    
+    
     NSError *error;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:&error];
     
     
     if(error){
@@ -89,12 +96,27 @@
         
         if([[dic allKeys] containsObject:@"balance"]){
             [_infoForTV addLabel:@"Balance" inSection:0];
-            [_infoForTV addInfo:[[dic valueForKey:@"balance"] stringValue] inSection:0];
+            [_infoForTV addInfo:[NSString stringWithFormat: @"%.6f", [[dic valueForKey:@"balance"] floatValue]] inSection:0];
         }
         else if([[dic allKeys] containsObject:@"confirmed_rewards"]){
             [_infoForTV addLabel:@"Balance" inSection:0];
-            [_infoForTV addInfo:[dic valueForKey:@"confirmed_rewards"] inSection:0];
+            [_infoForTV addInfo:[NSString stringWithFormat: @"%.6f", [[dic valueForKey:@"estimated_rewards"] floatValue]] inSection:0];
         }
+        
+        if([[dic allKeys] containsObject:@"actual24"]){
+            [_infoForTV addLabel:@"24h earning" inSection:0];
+            [_infoForTV addInfo:[NSString stringWithFormat: @"%.6f", [[dic valueForKey:@"actual24"] floatValue]] inSection:0];
+        }
+        
+        
+        if([[[NSUserDefaults standardUserDefaults] stringForKey:SETTING_INFO_SHOWN_KEY] isEqualToString:SETTING_INFO_SHOWN_ADVANCED]){
+            if([[dic allKeys] containsObject:@"total_paid"]){
+                [_infoForTV addLabel:@"Total paid" inSection:0];
+                [_infoForTV addInfo:[NSString stringWithFormat: @"%.6f", [[dic valueForKey:@"total_paid"] floatValue]] inSection:0];
+            }
+        }
+        
+        
         
         
         
@@ -122,7 +144,7 @@
                     [_infoForTV addInfo:@"YES" inSection:currentSection];
                 
                 [_infoForTV addLabel:@"Worker alive?" inSection:currentSection];
-
+                
             }
             
             if([[worker allKeys] containsObject:@"last_checkin"]){

@@ -8,6 +8,13 @@
 
 #import "PMDataDownloaderManager.h"
 #import "Pool.h"
+#import "PMDataDownloaderTypeGuardian.h"
+#import "PMDataDownloaderTypeLTCRabbit.h"
+#import "PMDataDownloaderTypeMultipool.h"
+#import "PMDataDownloaderTypeLitecoinPool.h"
+#import "PMDataDownloaderTypeD7.h"
+#import "PMDataDownloaderGeneral.h"
+
 
 @interface PMDataDownloaderManager()
 
@@ -20,12 +27,24 @@
 -(void)downloadData:(NSString *) url
 {
     
+    /*
+     Different downloader according to different type of API
+     
+     General: for all that are not these particular ones
+     
+     D7: condition added in general
+     */
+    
+    
+    
+    
+    
     if(([url rangeOfString:@"guardian"].location != NSNotFound)
        || ([url rangeOfString:@"wemineltc"].location != NSNotFound) )
     {
         _downloader = [[PMDataDownloaderTypeGuardian alloc] init];
     }
-    else if([url rangeOfString:@"multipool"].location != NSNotFound)
+    else if([url rangeOfString:@"multipool"].location != NSNotFound )
     {
         _downloader = [[PMDataDownloaderTypeMultipool alloc] init];
     }
@@ -33,9 +52,18 @@
     {
         _downloader = [[PMDataDownloaderTypeLitecoinPool alloc] init];
     }
-    else
+    else if ([url rangeOfString:@"rabbit"].location != NSNotFound)
     {
         _downloader = [[PMDataDownloaderTypeLTCRabbit alloc] init];
+    }
+    else if ([url rangeOfString:@"ppcoin.d7.lt"].location != NSNotFound)
+    {
+        _downloader = [[PMDataDownloaderTypeD7 alloc] init];
+    }
+    else
+    {
+       
+        _downloader = [[PMDataDownloaderGeneral alloc] init];
     }
     
     if(_downloader != nil){

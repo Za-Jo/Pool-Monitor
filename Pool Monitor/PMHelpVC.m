@@ -9,6 +9,7 @@
 #import "PMHelpVC.h"
 
 @interface PMHelpVC ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 

@@ -27,7 +27,7 @@
     _infos = [NSMutableArray array];
     _labels = [NSMutableArray array];
     _sectionNames = [NSMutableArray array];
-
+    
     return self;
 }
 
@@ -127,6 +127,15 @@
 {
     NSMutableArray *array = [_infos objectAtIndex:section];
     return [array count];
+}
+
+-(void)removeSection:(NSInteger) section{
+    if([_labels count] > section && [_sectionNames count] > section && [_infos count] > section){
+        [_labels removeObjectAtIndex:section];
+        [_sectionNames removeObjectAtIndex:section];
+        [_infos removeObjectAtIndex:section];
+
+    }
 }
 
 

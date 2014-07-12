@@ -5,8 +5,13 @@
 //  Created by Jonathan Duss on 23.01.14.
 //  Copyright (c) 2014 Jonathan Duss. All rights reserved.
 //
+#ifdef DEBUG
+//#define RESET
+#endif
+
 
 #import "PMAppDelegate.h"
+#import "GAI.h"
 
 @implementation PMAppDelegate
 
@@ -17,6 +22,35 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+#ifdef RESET
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:FIRST_OPEN];
+#endif
+    
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:FIRST_OPEN] ==  nil)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FIRST_OPEN];
+    }
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-52192915-1"];
+    
+    
+    
+    //user pref information density
+    if([[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:SETTING_INFO_SHOWN_KEY] == NO )
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:SETTING_INFO_SHOWN_BASIC forKey:SETTING_INFO_SHOWN_KEY];
+    }
 
     
     return YES;

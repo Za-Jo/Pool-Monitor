@@ -6,6 +6,13 @@
 
 #import <Availability.h>
 
+
+
+#define FIRST_OPEN @"first open"
+#define SETTING_INFO_SHOWN_KEY @"info shown settings key"
+#define SETTING_INFO_SHOWN_ADVANCED @"info shown advanced"
+#define SETTING_INFO_SHOWN_BASIC @"info shown basic"
+
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif

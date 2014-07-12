@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Pool.h"
 #import "PMDataDownloaderProtocol.h"
-#import "PMDataDownloaderTypeGuardian.h"
-#import "PMDataDownloaderTypeLTCRabbit.h"
-#import "PMDataDownloaderTypeMultipool.h"
-#import "PMDataDownloaderTypeLitecoinPool.h"
+
 
 
 @interface PMDataDownloaderManager : NSObject <PMDataDownloaderDelegate>

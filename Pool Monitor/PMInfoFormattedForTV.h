@@ -25,5 +25,5 @@
 -(NSUInteger)numberSection;
 -(NSUInteger)numberRowInSection:(NSUInteger)section;
 
-
+-(void)removeSection:(NSInteger) section;
 @end

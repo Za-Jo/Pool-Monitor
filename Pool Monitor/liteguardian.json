@@ -1,0 +1,33 @@
+{
+    "username": "ZaCoin",
+    "hashrate": 400,
+    "balance": 0.030676658097315,
+    "active_workers": "0",
+    "total_shares": 52882,
+    "total_rejects": 2,
+    "total_paid": 1.8930005866373,
+    "payout_threshold": 3,
+    "actual24": 1.566543434,
+    "workers": {
+        "ZaCoin.DEBUG_1": {
+            "hashrate": 0,
+            "alive": false,
+            "current_difficulty": 128,
+            "last_checkin": {
+                "date": "2014-06-06 19:38:02",
+                "timezone_type": 3,
+                "timezone": "Etc/UTC"
+            }
+        },
+        "ZaCoin.DEBUG_2": {
+            "hashrate": 400,
+            "alive": true,
+            "current_difficulty": 128,
+            "last_checkin": {
+                "date": "2014-08-06 19:38:02",
+                "timezone_type": 3,
+                "timezone": "Etc/UTC"
+            }
+        }
+    }
+}
