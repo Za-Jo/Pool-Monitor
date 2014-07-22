@@ -138,7 +138,7 @@
     [_progressHUD setMode:MBProgressHUDModeIndeterminate];
     [_progressHUD setLabelText:@"Updating"];
     [_progressHUD setDetailsLabelText:@"Touch to cancel"];
-    [_progressHUD setMinShowTime:1];
+    [_progressHUD setMinShowTime:0.5];
     [_progressHUD showProgressAnimationOnTop];
     [_progressHUD setRemoveFromSuperViewOnHide:YES];
     

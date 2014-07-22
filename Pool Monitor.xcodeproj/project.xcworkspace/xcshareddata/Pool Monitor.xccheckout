@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>040D0B39-8890-4AA1-B833-42A14ABDEE9F</string>
+	<string>5F4BDC41-962F-43E7-929A-0C6A2EBCD0CC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Pool Monitor</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -19,7 +19,7 @@
 	<dict>
 		<key>665E3A08-8AE0-45AC-BF0D-027DE8419EC9</key>
 		<string>../..</string>
-		<key>DBE6B766-6239-4EF4-841A-69CF014675EF</key>
+		<key>E34FFD77-2AF2-4002-9CF1-9FBE76B0E389</key>
 		<string>../../../LMovie</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DBE6B766-6239-4EF4-841A-69CF014675EF</string>
+			<string>E34FFD77-2AF2-4002-9CF1-9FBE76B0E389</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LMovie</string>
 		</dict>
